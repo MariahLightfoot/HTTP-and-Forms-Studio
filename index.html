@@ -3,19 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="png" href="images/favicon-16x16.png">
+	<title>Gary the Search Engine Robot</title>
+
 	<script>
+	let greetings = [ "What's up dawg?", "What's the tea?", "How's it hanging?"];
+
+	function randomNumberSelector(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+	}
+
+	window.addEventListener('load', (event) => {
+		let randomNumber = randomNumberSelector(greetings.length);
+		document.getElementById("placeholder").innerHTML = "greetings[randomNumber]";
+	});
+	
 	let actions = {
 		"google": "https://www.google.com/search",
 		"duckDuckGo": "https://duckduckgo.com",
 		"bing": "https://www.bing.com/search",
 		"ask": "https://www.ask.com/web"
-	}
+	};
 
 	function setSearchEngine(){
 		let radioButtonValue = document.querySelector("input[name=engine]:checked").value;
 		//document.getElementById("searchForm").action[]
 		let form = document.getElementById("searchForm");
-		form.setAttribute("action", actions[radioButtonValue])
+		form.setAttribute("action", actions[radioButtonValue]);
 	}
     window.addEventListener("load", function(){
 		let form = document.getElementById("searchForm");
@@ -23,12 +37,13 @@
     	
 	});
 	</script>
+
 </head>
 
 <body>
 	<img src="images/wp3643297.png" alt="search bot" height="300" width="250"> 
 	<form id="searchForm" action="">
-		<input type="text" name="q" placeholder="Wat up?" autocomplete="off" required/>
+		<input type="text" name="q" placeholder="What's the tea?" autocomplete="off" required/>
 
 		<div class="radioButtons">
 			<label><input type="radio" name="engine" value="google" required/> Google </label>
