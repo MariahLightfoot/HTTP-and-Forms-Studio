@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+}
+
+img{
+   padding-top: 100px; 
+}
+
+
+input[type=text]{
+    width: 50%;
+    line-height: 30px;
+    border-radius: 10px;
+    outline-width: 0;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.radioButtons{
+    padding-top: 25px;
+}
+
