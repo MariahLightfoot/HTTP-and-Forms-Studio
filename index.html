@@ -3,9 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<script>
-		// TODO: create a handler
+	let actions = {
+		"google": "https://www.google.com/search",
+		"duckDuckGo": "https://duckduckgo.com",
+		"bing": "https://www.bing.com/search",
+		"Ask": "https://www.ask.com/web"
+	}
+	
+	function setSearchEngine(){
+		let selectedValue = document.querySelector("input[name=engine]:checked");
+	}
     window.addEventListener("load", function(){
-        // TODO: register the handler
+		let form = document.getElementById("searchForm");
+        form.addEventListener("submit", setSearchEngine);
+    	
     });
 	</script>
 </head>
